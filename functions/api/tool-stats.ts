@@ -1,10 +1,18 @@
 // Cloudflare Pages Function — Tool stats (usage counts + ratings)
 // Uses Cloudflare KV REST API directly (no binding needed)
 
-const CORS_HEADERS = {
-	"Access-Control-Allow-Origin": "https://dahouse.fr",
-	"Content-Type": "application/json",
-};
+function corsOrigin(request: Request): string {
+	const origin = request.headers.get("Origin") || "";
+	const allowed = ["https://dahouse.fr", "https://outils.cyber-rgpd.com"];
+	return allowed.includes(origin) ? origin : allowed[0];
+}
+
+function corsHeaders(request: Request) {
+	return {
+		"Access-Control-Allow-Origin": corsOrigin(request),
+		"Content-Type": "application/json",
+	};
+}
 
 const CF_ACCOUNT_ID = "8f4ca2fd779c71617abe3fabda706cd8";
 const KV_NAMESPACE_ID = "360ae513ef2843e7aa178878a6c4a43b";
@@ -59,7 +67,7 @@ async function kvDelete(key: string, apiToken: string): Promise<void> {
 
 // GET /api/tool-stats — return all stats
 export async function onRequestGet(context: any) {
-	const { env } = context;
+	const { request, env } = context;
 	const apiToken = env.CF_KV_API_TOKEN;
 
 	// Fallback: try binding first, then REST API
@@ -68,7 +76,7 @@ export async function onRequestGet(context: any) {
 	if (!kv && !apiToken) {
 		return new Response(JSON.stringify({ error: "KV not configured" }), {
 			status: 503,
-			headers: CORS_HEADERS,
+			headers: corsHeaders(request),
 		});
 	}
 
@@ -91,7 +99,7 @@ export async function onRequestGet(context: any) {
 
 	return new Response(JSON.stringify(stats), {
 		status: 200,
-		headers: { ...CORS_HEADERS, "Cache-Control": "public, max-age=30" },
+		headers: { ...corsHeaders(request), "Cache-Control": "public, max-age=30" },
 	});
 }
 
@@ -104,7 +112,7 @@ export async function onRequestPost(context: any) {
 	if (!kv && !apiToken) {
 		return new Response(JSON.stringify({ error: "KV not configured" }), {
 			status: 503,
-			headers: CORS_HEADERS,
+			headers: corsHeaders(request),
 		});
 	}
 
@@ -114,7 +122,7 @@ export async function onRequestPost(context: any) {
 	if (!tool || !VALID_TOOLS.has(tool)) {
 		return new Response(JSON.stringify({ error: "Invalid tool" }), {
 			status: 400,
-			headers: CORS_HEADERS,
+			headers: corsHeaders(request),
 		});
 	}
 
@@ -134,7 +142,7 @@ export async function onRequestPost(context: any) {
 			const current = parseInt((await get(`usage:${tool}`)) || "0", 10);
 			return new Response(
 				JSON.stringify({ usage: BASE_COUNTS[tool] + current }),
-				{ status: 200, headers: CORS_HEADERS }
+				{ status: 200, headers: corsHeaders(request) }
 			);
 		}
 
@@ -145,7 +153,7 @@ export async function onRequestPost(context: any) {
 
 		return new Response(
 			JSON.stringify({ usage: BASE_COUNTS[tool] + current + 1 }),
-			{ status: 200, headers: CORS_HEADERS }
+			{ status: 200, headers: corsHeaders(request) }
 		);
 	}
 
@@ -157,7 +165,7 @@ export async function onRequestPost(context: any) {
 		if (existingVote === vote) {
 			return new Response(JSON.stringify({ ok: true, already: true }), {
 				status: 200,
-				headers: CORS_HEADERS,
+				headers: corsHeaders(request),
 			});
 		}
 
@@ -180,22 +188,23 @@ export async function onRequestPost(context: any) {
 
 		return new Response(JSON.stringify({ ok: true }), {
 			status: 200,
-			headers: CORS_HEADERS,
+			headers: corsHeaders(request),
 		});
 	}
 
 	return new Response(JSON.stringify({ error: "Invalid action" }), {
 		status: 400,
-		headers: CORS_HEADERS,
+		headers: corsHeaders(request),
 	});
 }
 
 // CORS preflight
-export async function onRequestOptions() {
+export async function onRequestOptions(context: any) {
+	const { request } = context;
 	return new Response(null, {
 		status: 204,
 		headers: {
-			"Access-Control-Allow-Origin": "https://dahouse.fr",
+			"Access-Control-Allow-Origin": corsOrigin(request),
 			"Access-Control-Allow-Methods": "GET, POST, OPTIONS",
 			"Access-Control-Allow-Headers": "Content-Type",
 		},

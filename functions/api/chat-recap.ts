@@ -1,5 +1,11 @@
 import { Resend } from 'resend';
 
+function corsOrigin(request: Request): string {
+  const origin = request.headers.get("Origin") || "";
+  const allowed = ["https://dahouse.fr", "https://outils.cyber-rgpd.com"];
+  return allowed.includes(origin) ? origin : allowed[0];
+}
+
 interface RecapRequest {
   email: string;
   conversation: string;
@@ -10,14 +16,14 @@ function escapeHtml(str: string): string {
 }
 
 export async function onRequestPost(context: any) {
+  const { request, env } = context;
   try {
-    const { request, env } = context;
     const body: RecapRequest = await request.json();
 
     if (!body.email || !body.conversation) {
       return new Response(
         JSON.stringify({ error: "Email et conversation requis" }),
-        { status: 400, headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "https://dahouse.fr" } }
+        { status: 400, headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": corsOrigin(request) } }
       );
     }
 
@@ -25,7 +31,7 @@ export async function onRequestPost(context: any) {
     if (!emailRegex.test(body.email)) {
       return new Response(
         JSON.stringify({ error: "Email invalide" }),
-        { status: 400, headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "https://dahouse.fr" } }
+        { status: 400, headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": corsOrigin(request) } }
       );
     }
 
@@ -71,28 +77,29 @@ export async function onRequestPost(context: any) {
       console.error('Resend error:', result.error);
       return new Response(
         JSON.stringify({ error: "Erreur d'envoi" }),
-        { status: 500, headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "https://dahouse.fr" } }
+        { status: 500, headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": corsOrigin(request) } }
       );
     }
 
     return new Response(
       JSON.stringify({ success: true }),
-      { status: 200, headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "https://dahouse.fr" } }
+      { status: 200, headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": corsOrigin(request) } }
     );
   } catch (error) {
     console.error('Recap error:', error);
     return new Response(
       JSON.stringify({ error: "Une erreur est survenue" }),
-      { status: 500, headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "https://dahouse.fr" } }
+      { status: 500, headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": corsOrigin(request) } }
     );
   }
 }
 
-export async function onRequestOptions() {
+export async function onRequestOptions(context: any) {
+  const { request } = context;
   return new Response(null, {
     status: 204,
     headers: {
-      "Access-Control-Allow-Origin": "https://dahouse.fr",
+      "Access-Control-Allow-Origin": corsOrigin(request),
       "Access-Control-Allow-Methods": "POST, OPTIONS",
       "Access-Control-Allow-Headers": "Content-Type",
     },

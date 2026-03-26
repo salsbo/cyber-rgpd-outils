@@ -1,5 +1,11 @@
 import { Resend } from 'resend';
 
+function corsOrigin(request: Request): string {
+  const origin = request.headers.get("Origin") || "";
+  const allowed = ["https://dahouse.fr", "https://outils.cyber-rgpd.com"];
+  return allowed.includes(origin) ? origin : allowed[0];
+}
+
 interface ContactFormData {
   firstName: string;
   lastName: string;
@@ -36,9 +42,8 @@ function cleanSubject(str: string): string {
 }
 
 export async function onRequestPost(context: any) {
+  const { request, env } = context;
   try {
-    const { request, env } = context;
-
     // Parse request body
     const data: ContactFormData = await request.json();
 
@@ -59,7 +64,7 @@ export async function onRequestPost(context: any) {
           status: 400,
           headers: {
             'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': 'https://dahouse.fr'
+            'Access-Control-Allow-Origin': corsOrigin(request)
           }
         }
       );
@@ -74,7 +79,7 @@ export async function onRequestPost(context: any) {
           status: 400,
           headers: {
             'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': 'https://dahouse.fr'
+            'Access-Control-Allow-Origin': corsOrigin(request)
           }
         }
       );
@@ -88,7 +93,7 @@ export async function onRequestPost(context: any) {
           status: 400,
           headers: {
             'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': 'https://dahouse.fr'
+            'Access-Control-Allow-Origin': corsOrigin(request)
           }
         }
       );
@@ -118,7 +123,7 @@ export async function onRequestPost(context: any) {
           status: 400,
           headers: {
             'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': 'https://dahouse.fr'
+            'Access-Control-Allow-Origin': corsOrigin(request)
           }
         }
       );
@@ -270,7 +275,7 @@ export async function onRequestPost(context: any) {
           status: 500,
           headers: {
             'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': 'https://dahouse.fr'
+            'Access-Control-Allow-Origin': corsOrigin(request)
           }
         }
       );
@@ -286,7 +291,7 @@ export async function onRequestPost(context: any) {
         status: 200,
         headers: {
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': 'https://dahouse.fr'
+          'Access-Control-Allow-Origin': corsOrigin(request)
         }
       }
     );
@@ -302,7 +307,7 @@ export async function onRequestPost(context: any) {
         status: 500,
         headers: {
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': 'https://dahouse.fr'
+          'Access-Control-Allow-Origin': corsOrigin(request)
         }
       }
     );
@@ -310,11 +315,12 @@ export async function onRequestPost(context: any) {
 }
 
 // Handle CORS preflight
-export async function onRequestOptions() {
+export async function onRequestOptions(context: any) {
+  const { request } = context;
   return new Response(null, {
     status: 204,
     headers: {
-      'Access-Control-Allow-Origin': 'https://dahouse.fr',
+      'Access-Control-Allow-Origin': corsOrigin(request),
       'Access-Control-Allow-Methods': 'POST, OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type',
     },

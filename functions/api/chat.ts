@@ -1,3 +1,9 @@
+function corsOrigin(request: Request): string {
+  const origin = request.headers.get("Origin") || "";
+  const allowed = ["https://dahouse.fr", "https://outils.cyber-rgpd.com"];
+  return allowed.includes(origin) ? origin : allowed[0];
+}
+
 interface ChatMessage {
   role: "user" | "assistant";
   content: string;
@@ -91,21 +97,21 @@ BASE DE CONNAISSANCES :
 }
 
 export async function onRequestPost(context: any) {
+  const { request, env } = context;
   try {
-    const { request, env } = context;
     const body: ChatRequest = await request.json();
 
     if (!body.messages || !Array.isArray(body.messages) || body.messages.length === 0) {
       return new Response(
         JSON.stringify({ error: "Messages requis" }),
-        { status: 400, headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "https://dahouse.fr" } }
+        { status: 400, headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": corsOrigin(request) } }
       );
     }
 
     if (body.messages.length > 20) {
       return new Response(
         JSON.stringify({ error: "Conversation trop longue" }),
-        { status: 400, headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "https://dahouse.fr" } }
+        { status: 400, headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": corsOrigin(request) } }
       );
     }
 
@@ -118,7 +124,7 @@ export async function onRequestPost(context: any) {
     if (!apiKey) {
       return new Response(
         JSON.stringify({ error: "Configuration manquante" }),
-        { status: 500, headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "https://dahouse.fr" } }
+        { status: 500, headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": corsOrigin(request) } }
       );
     }
 
@@ -143,7 +149,7 @@ export async function onRequestPost(context: any) {
       console.error("Anthropic API error:", await response.text());
       return new Response(
         JSON.stringify({ error: "Erreur du service IA" }),
-        { status: 502, headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "https://dahouse.fr" } }
+        { status: 502, headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": corsOrigin(request) } }
       );
     }
 
@@ -152,22 +158,23 @@ export async function onRequestPost(context: any) {
 
     return new Response(
       JSON.stringify({ message: assistantMessage }),
-      { status: 200, headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "https://dahouse.fr" } }
+      { status: 200, headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": corsOrigin(request) } }
     );
   } catch (error) {
     console.error("Chat error:", error);
     return new Response(
       JSON.stringify({ error: "Une erreur est survenue" }),
-      { status: 500, headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "https://dahouse.fr" } }
+      { status: 500, headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": corsOrigin(request) } }
     );
   }
 }
 
-export async function onRequestOptions() {
+export async function onRequestOptions(context: any) {
+  const { request } = context;
   return new Response(null, {
     status: 204,
     headers: {
-      "Access-Control-Allow-Origin": "https://dahouse.fr",
+      "Access-Control-Allow-Origin": corsOrigin(request),
       "Access-Control-Allow-Methods": "POST, OPTIONS",
       "Access-Control-Allow-Headers": "Content-Type",
     },
