@@ -1,0 +1,11 @@
+# robots.txt pour dahouse.fr
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://dahouse.fr/sitemap.xml
+
+# Bloquer les fichiers sensibles (au cas où)
+Disallow: /api/
+Disallow: /_next/
+Disallow: /functions/

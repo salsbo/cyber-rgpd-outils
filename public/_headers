@@ -1,0 +1,12 @@
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: https: blob:; font-src 'self' data:; connect-src 'self' https://*.dahouse.fr https://api-adresse.data.gouv.fr https://data.anfr.fr https://cloudflare-dns.com https://dns.google https://1.1.1.1 https://speed-test.dahouse.fr https://scan-ports.dahouse.fr https://visio-test.dahouse.fr https://eligibilite.dahouse.fr https://www.google-analytics.com https://challenges.cloudflare.com wss://visio-test.dahouse.fr; frame-src https://challenges.cloudflare.com; worker-src 'self' blob:
+
+/api/*
+  Access-Control-Allow-Origin: https://dahouse.fr
+  Access-Control-Allow-Methods: POST, OPTIONS
+  Access-Control-Allow-Headers: Content-Type

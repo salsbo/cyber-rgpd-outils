@@ -1,0 +1,8 @@
+name = "dahouse"
+pages_build_output_dir = "out"
+compatibility_date = "2025-12-20"
+compatibility_flags = ["nodejs_compat"]
+
+[[kv_namespaces]]
+binding = "TOOL_STATS"
+id = "360ae513ef2843e7aa178878a6c4a43b"
