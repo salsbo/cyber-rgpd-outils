@@ -162,8 +162,8 @@ export default function ScanPortsPage() {
 					className="text-center mb-10"
 				>
 					<div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 border border-gray-200 mb-6">
-						<Shield className="w-4 h-4 text-indigo-600" />
-						<span className="text-sm font-mono text-indigo-600">
+						<Shield className="w-4 h-4 text-blue-600" />
+						<span className="text-sm font-mono text-blue-600">
 							scan exposition
 						</span>
 					</div>
@@ -189,7 +189,7 @@ export default function ScanPortsPage() {
 							onClick={() => setMode("simple")}
 							className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all ${
 								mode === "simple"
-									? "bg-indigo-600 text-gray-900 shadow-lg shadow-indigo-200"
+									? "bg-blue-600 text-gray-900 shadow-lg shadow-blue-200"
 									: "text-muted-foreground hover:text-gray-900"
 							}`}
 						>
@@ -200,7 +200,7 @@ export default function ScanPortsPage() {
 							onClick={() => setMode("expert")}
 							className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all ${
 								mode === "expert"
-									? "bg-indigo-600 text-gray-900 shadow-lg shadow-indigo-200"
+									? "bg-blue-600 text-gray-900 shadow-lg shadow-blue-200"
 									: "text-muted-foreground hover:text-gray-900"
 							}`}
 						>
@@ -284,14 +284,14 @@ export default function ScanPortsPage() {
 							className="glass-card p-6 rounded-2xl border border-gray-200 mb-8"
 						>
 							<div className="flex items-center gap-3 mb-3">
-								<Shield className="w-5 h-5 text-indigo-600" />
+								<Shield className="w-5 h-5 text-blue-600" />
 								<span className="text-gray-900 font-medium">
 									{progress}
 								</span>
 							</div>
 							<div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
 								<motion.div
-									className="h-full bg-indigo-500 rounded-full"
+									className="h-full bg-blue-500 rounded-full"
 									animate={{ width: ["0%", "80%", "90%"] }}
 									transition={{
 										duration: 8,
@@ -410,7 +410,7 @@ export default function ScanPortsPage() {
 									className="glass-card p-5 rounded-2xl border border-gray-200"
 								>
 									<div className="flex items-center gap-2 mb-2">
-										<Monitor className="w-5 h-5 text-indigo-600" />
+										<Monitor className="w-5 h-5 text-blue-600" />
 										<span className="text-gray-900 font-medium">
 											{mode === "simple"
 												? "Système détecté"
@@ -555,7 +555,7 @@ export default function ScanPortsPage() {
 									className="glass-card p-6 rounded-2xl border border-gray-200"
 								>
 									<div className="flex items-start gap-3">
-										<Shield className="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" />
+										<Shield className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
 										<div>
 											<p className="text-gray-900 font-display font-semibold mb-2">
 												{mode === "simple"
@@ -626,7 +626,7 @@ export default function ScanPortsPage() {
 								>
 									<Link
 										href="https://cyber-rgpd.com"
-										className="inline-flex items-center gap-2 px-8 py-4 bg-indigo-600 hover:bg-indigo-500 rounded-full font-display font-bold text-lg transition-all hover:scale-105 active:scale-95 shadow-lg shadow-indigo-200"
+										className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-500 rounded-full font-display font-bold text-lg transition-all hover:scale-105 active:scale-95 shadow-lg shadow-blue-200"
 									>
 										Contactez-nous pour un audit complet &rarr;
 									</Link>

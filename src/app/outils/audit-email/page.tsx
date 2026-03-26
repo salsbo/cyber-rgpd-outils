@@ -85,7 +85,7 @@ function ModeToggle({
 				onClick={() => onChange("simple")}
 				className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all ${
 					mode === "simple"
-						? "bg-indigo-600 text-gray-900 shadow-lg shadow-indigo-200"
+						? "bg-blue-600 text-gray-900 shadow-lg shadow-blue-200"
 						: "text-muted-foreground hover:text-gray-900"
 				}`}
 			>
@@ -96,7 +96,7 @@ function ModeToggle({
 				onClick={() => onChange("expert")}
 				className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all ${
 					mode === "expert"
-						? "bg-indigo-600 text-gray-900 shadow-lg shadow-indigo-200"
+						? "bg-blue-600 text-gray-900 shadow-lg shadow-blue-200"
 						: "text-muted-foreground hover:text-gray-900"
 				}`}
 			>
@@ -316,8 +316,8 @@ export default function AuditEmailPage() {
 					className="mb-10"
 				>
 					<div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 border border-gray-200 mb-6">
-						<Mail className="w-4 h-4 text-indigo-600" />
-						<span className="text-sm font-mono text-indigo-600">
+						<Mail className="w-4 h-4 text-blue-600" />
+						<span className="text-sm font-mono text-blue-600">
 							audit email
 						</span>
 					</div>
@@ -351,14 +351,14 @@ export default function AuditEmailPage() {
 									value={input}
 									onChange={(e) => setInput(e.target.value)}
 									placeholder="contact@example.com ou example.com"
-									className="w-full pl-11 pr-4 py-3.5 bg-gray-100 border border-gray-200 rounded-xl text-gray-900 placeholder:text-muted-foreground focus:outline-none focus:border-indigo-500/50 focus:ring-1 focus:ring-indigo-500/30 transition-all"
+									className="w-full pl-11 pr-4 py-3.5 bg-gray-100 border border-gray-200 rounded-xl text-gray-900 placeholder:text-muted-foreground focus:outline-none focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/30 transition-all"
 									disabled={loading}
 								/>
 							</div>
 							<button
 								type="submit"
 								disabled={loading || !input.trim()}
-								className="px-6 py-3.5 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-40 disabled:cursor-not-allowed rounded-xl font-semibold transition-all hover:scale-105 active:scale-95 flex items-center gap-2 shrink-0"
+								className="px-6 py-3.5 bg-blue-600 hover:bg-blue-500 disabled:opacity-40 disabled:cursor-not-allowed rounded-xl font-semibold transition-all hover:scale-105 active:scale-95 flex items-center gap-2 shrink-0"
 							>
 								{loading ? (
 									<>
@@ -407,7 +407,7 @@ export default function AuditEmailPage() {
 							exit={{ opacity: 0 }}
 							className="text-center py-16"
 						>
-							<Loader2 className="w-8 h-8 animate-spin text-indigo-600 mx-auto mb-4" />
+							<Loader2 className="w-8 h-8 animate-spin text-blue-600 mx-auto mb-4" />
 							<p className="text-muted-foreground">
 								{mode === "simple"
 									? "Vérification de votre messagerie en cours..."
@@ -435,7 +435,7 @@ export default function AuditEmailPage() {
 										{mode === "simple"
 											? "Résultats pour "
 											: "Résultats pour "}
-										<span className="text-indigo-600">
+										<span className="text-blue-600">
 											{result.domain}
 										</span>
 									</h2>
@@ -519,10 +519,10 @@ export default function AuditEmailPage() {
 										type="checkbox"
 										checked={wantReport}
 										onChange={(e) => setWantReport(e.target.checked)}
-										className="mt-1 w-4 h-4 rounded border-gray-200 bg-gray-100 accent-indigo-600 shrink-0"
+										className="mt-1 w-4 h-4 rounded border-gray-200 bg-gray-100 accent-blue-600 shrink-0"
 									/>
 									<div>
-										<span className="text-sm text-gray-900 group-hover:text-indigo-600 transition-colors">
+										<span className="text-sm text-gray-900 group-hover:text-blue-600 transition-colors">
 											Recevoir ce rapport par email
 										</span>
 										<p className="text-xs text-muted-foreground mt-0.5">
@@ -536,10 +536,10 @@ export default function AuditEmailPage() {
 										type="checkbox"
 										checked={wantContact}
 										onChange={(e) => setWantContact(e.target.checked)}
-										className="mt-1 w-4 h-4 rounded border-gray-200 bg-gray-100 accent-indigo-600 shrink-0"
+										className="mt-1 w-4 h-4 rounded border-gray-200 bg-gray-100 accent-blue-600 shrink-0"
 									/>
 									<div>
-										<span className="text-sm text-gray-900 group-hover:text-indigo-600 transition-colors">
+										<span className="text-sm text-gray-900 group-hover:text-blue-600 transition-colors">
 											Je souhaite être recontacté(e) pour du support
 										</span>
 										<AnimatePresence>
@@ -606,7 +606,7 @@ export default function AuditEmailPage() {
 											className={`w-full py-3 rounded-xl font-semibold text-sm transition-all flex items-center justify-center gap-2 ${
 												optinSent
 													? "bg-emerald-600/20 border border-emerald-200 text-emerald-600"
-													: "bg-indigo-600 hover:bg-indigo-500 hover:scale-[1.01] active:scale-[0.99]"
+													: "bg-blue-600 hover:bg-blue-500 hover:scale-[1.01] active:scale-[0.99]"
 											}`}
 										>
 											{optinSent ? (
@@ -636,7 +636,7 @@ export default function AuditEmailPage() {
 								transition={{ delay: 0.5 }}
 								className="rounded-2xl border border-gray-200 bg-gray-50 p-8 text-center"
 							>
-								<MessageSquare className="w-8 h-8 text-indigo-600 mx-auto mb-4" />
+								<MessageSquare className="w-8 h-8 text-blue-600 mx-auto mb-4" />
 								<h3 className="font-display font-semibold text-lg mb-2">
 									{mode === "simple"
 										? "Besoin d'aide ?"
@@ -653,7 +653,7 @@ export default function AuditEmailPage() {
 								>
 									<Link
 										href="https://cyber-rgpd.com"
-										className="inline-flex items-center gap-2 px-8 py-4 bg-indigo-600 hover:bg-indigo-500 rounded-full font-display font-bold text-lg transition-all hover:scale-105 active:scale-95 shadow-lg shadow-indigo-200"
+										className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-500 rounded-full font-display font-bold text-lg transition-all hover:scale-105 active:scale-95 shadow-lg shadow-blue-200"
 									>
 										Contactez-nous pour un diagnostic complet &rarr;
 									</Link>

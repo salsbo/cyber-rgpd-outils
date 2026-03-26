@@ -90,8 +90,8 @@ export default function EligibilitePage() {
 				{/* Header */}
 				<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-10">
 					<div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 border border-gray-200 mb-6">
-						<MapPin className="w-4 h-4 text-indigo-600" />
-						<span className="text-sm font-mono text-indigo-600">éligibilité</span>
+						<MapPin className="w-4 h-4 text-blue-600" />
+						<span className="text-sm font-mono text-blue-600">éligibilité</span>
 					</div>
 					<h1 className="text-3xl md:text-4xl font-display font-bold mb-3">
 						La fibre et la 4G/5G sont-elles disponibles chez vous ?
@@ -105,10 +105,10 @@ export default function EligibilitePage() {
 				{/* Toggle */}
 				<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1 }} className="flex justify-center mb-6">
 					<div className="flex items-center gap-1 p-1 bg-gray-100 border border-gray-200 rounded-full">
-						<button onClick={() => setMode("simple")} className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all ${mode === "simple" ? "bg-indigo-600 text-gray-900 shadow-lg shadow-indigo-200" : "text-muted-foreground hover:text-gray-900"}`}>
+						<button onClick={() => setMode("simple")} className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all ${mode === "simple" ? "bg-blue-600 text-gray-900 shadow-lg shadow-blue-200" : "text-muted-foreground hover:text-gray-900"}`}>
 							<User className="w-3.5 h-3.5" /> Utilisateur
 						</button>
-						<button onClick={() => setMode("expert")} className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all ${mode === "expert" ? "bg-indigo-600 text-gray-900 shadow-lg shadow-indigo-200" : "text-muted-foreground hover:text-gray-900"}`}>
+						<button onClick={() => setMode("expert")} className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all ${mode === "expert" ? "bg-blue-600 text-gray-900 shadow-lg shadow-blue-200" : "text-muted-foreground hover:text-gray-900"}`}>
 							<Code className="w-3.5 h-3.5" /> Expert
 						</button>
 					</div>
@@ -131,7 +131,7 @@ export default function EligibilitePage() {
 							<motion.div initial={{ opacity: 0, y: -5 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -5 }} className="absolute z-20 w-full mt-1 glass-card rounded-xl border border-gray-200 overflow-hidden">
 								{suggestions.map((addr, i) => (
 									<button key={i} onClick={() => handleSelect(addr)} className="w-full text-left px-4 py-3 text-sm text-gray-900 hover:bg-gray-100 transition-colors flex items-center gap-2 border-b border-gray-100 last:border-0">
-										<MapPin className="w-4 h-4 text-indigo-600 shrink-0" />
+										<MapPin className="w-4 h-4 text-blue-600 shrink-0" />
 										{addr.label}
 									</button>
 								))}
@@ -153,12 +153,12 @@ export default function EligibilitePage() {
 					{isRunning && (
 						<motion.div key="progress" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} className="glass-card p-6 rounded-2xl border border-gray-200 mb-8">
 							<div className="flex items-center gap-3 mb-2">
-								<Activity className="w-5 h-5 text-indigo-600" />
+								<Activity className="w-5 h-5 text-blue-600" />
 								<span className="text-gray-900 font-medium">{progress.message}</span>
 							</div>
 							{progress.detail && <p className="text-sm text-muted-foreground mb-3 ml-8">{progress.detail}</p>}
 							<div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
-								<motion.div className="h-full bg-indigo-500 rounded-full" animate={{ width: `${progress.progress}%` }} transition={{ duration: 0.3 }} />
+								<motion.div className="h-full bg-blue-500 rounded-full" animate={{ width: `${progress.progress}%` }} transition={{ duration: 0.3 }} />
 							</div>
 						</motion.div>
 					)}
@@ -268,7 +268,7 @@ export default function EligibilitePage() {
 							{result.antennas.length > 0 && (
 								<motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="glass-card p-5 rounded-2xl border border-gray-200">
 									<h3 className="text-gray-900 font-display font-semibold mb-4 flex items-center gap-2">
-										<Radio className="w-5 h-5 text-indigo-600" />
+										<Radio className="w-5 h-5 text-blue-600" />
 										{mode === "simple" ? "Antennes à proximité" : "Stations de base 4G/5G"}
 									</h3>
 
@@ -303,7 +303,7 @@ export default function EligibilitePage() {
 													<div className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: getOperatorColor(ant.operator) }} />
 													<span className="text-sm text-gray-900">{ant.operator}</span>
 													{ant.generation.split("+").map((g) => (
-														<span key={g} className={`text-xs px-1.5 py-0.5 rounded ${g === "5G" ? "bg-purple-100 text-purple-600" : "bg-indigo-100 text-indigo-600"}`}>{g}</span>
+														<span key={g} className={`text-xs px-1.5 py-0.5 rounded ${g === "5G" ? "bg-purple-100 text-purple-600" : "bg-blue-100 text-blue-600"}`}>{g}</span>
 													))}
 													{mode === "expert" && <span className="text-xs text-muted-foreground">{ant.technology}</span>}
 												</div>
@@ -320,7 +320,7 @@ export default function EligibilitePage() {
 							{/* Summary */}
 							<motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="glass-card p-6 rounded-2xl border border-gray-200">
 								<div className="flex items-start gap-3">
-									<Shield className="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" />
+									<Shield className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
 									<div>
 										<p className="text-gray-900 font-display font-semibold mb-2">En résumé</p>
 										<ul className="text-sm text-muted-foreground space-y-1.5">
@@ -341,7 +341,7 @@ export default function EligibilitePage() {
 							<motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} className="text-center mt-6">
 								<p className="text-muted-foreground mb-4">Vous souhaitez aller plus loin ?</p>
 								<motion.div animate={{ opacity: [0.7, 1, 0.7] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}>
-									<Link href="https://cyber-rgpd.com" className="inline-flex items-center gap-2 px-8 py-4 bg-indigo-600 hover:bg-indigo-500 rounded-full font-display font-bold text-lg transition-all hover:scale-105 active:scale-95 shadow-lg shadow-indigo-200">
+									<Link href="https://cyber-rgpd.com" className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-500 rounded-full font-display font-bold text-lg transition-all hover:scale-105 active:scale-95 shadow-lg shadow-blue-200">
 										Demander une étude d&apos;éligibilité sur mesure &rarr;
 									</Link>
 								</motion.div>

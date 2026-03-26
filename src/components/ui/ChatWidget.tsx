@@ -161,8 +161,8 @@ export default function ChatWidget({
     >
       {/* Header */}
       <div className="px-5 py-3 border-b border-white/5 flex items-center gap-3">
-        <div className="w-8 h-8 rounded-full bg-indigo-500/20 flex items-center justify-center">
-          <Bot className="w-4 h-4 text-indigo-400" />
+        <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center">
+          <Bot className="w-4 h-4 text-blue-500" />
         </div>
         <div>
           <p className="text-sm font-medium text-white">Assistant DAHOUSE</p>
@@ -182,14 +182,14 @@ export default function ChatWidget({
             className={`flex gap-3 ${msg.role === "user" ? "justify-end" : ""}`}
           >
             {msg.role === "assistant" && (
-              <div className="w-7 h-7 rounded-full bg-indigo-500/20 flex items-center justify-center shrink-0 mt-1">
-                <Bot className="w-3.5 h-3.5 text-indigo-400" />
+              <div className="w-7 h-7 rounded-full bg-blue-500/20 flex items-center justify-center shrink-0 mt-1">
+                <Bot className="w-3.5 h-3.5 text-blue-500" />
               </div>
             )}
             <div
               className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm leading-relaxed whitespace-pre-wrap ${
                 msg.role === "user"
-                  ? "bg-indigo-600 text-white rounded-br-md"
+                  ? "bg-blue-600 text-white rounded-br-md"
                   : "bg-white/5 text-white/90 border border-white/5 rounded-bl-md"
               }`}
             >
@@ -205,8 +205,8 @@ export default function ChatWidget({
 
         {isLoading && (
           <div className="flex gap-3">
-            <div className="w-7 h-7 rounded-full bg-indigo-500/20 flex items-center justify-center shrink-0">
-              <Bot className="w-3.5 h-3.5 text-indigo-400" />
+            <div className="w-7 h-7 rounded-full bg-blue-500/20 flex items-center justify-center shrink-0">
+              <Bot className="w-3.5 h-3.5 text-blue-500" />
             </div>
             <div className="bg-white/5 border border-white/5 rounded-2xl rounded-bl-md px-4 py-3">
               <div className="flex gap-1.5">
@@ -248,7 +248,7 @@ export default function ChatWidget({
           <button
             onClick={sendMessage}
             disabled={!input.trim() || isLoading}
-            className="p-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 transition-all disabled:opacity-30 disabled:cursor-not-allowed shrink-0"
+            className="p-3 rounded-xl bg-blue-600 hover:bg-blue-500 transition-all disabled:opacity-30 disabled:cursor-not-allowed shrink-0"
           >
             <Send className="w-4 h-4 text-white" />
           </button>

@@ -339,8 +339,8 @@ export default function Test4GPage() {
 					className="text-center mb-10"
 				>
 					<div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 border border-gray-200 mb-6">
-						<Signal className="w-4 h-4 text-indigo-600" />
-						<span className="text-sm font-mono text-indigo-600">
+						<Signal className="w-4 h-4 text-blue-600" />
+						<span className="text-sm font-mono text-blue-600">
 							test 4G / 5G
 						</span>
 					</div>
@@ -393,10 +393,10 @@ export default function Test4GPage() {
 							<div className="grid grid-cols-2 gap-4">
 								<button
 									onClick={() => setPlatform("android")}
-									className="glass-card p-6 rounded-2xl border border-gray-200 hover:border-indigo-200 transition-all hover:scale-[1.02] text-center group"
+									className="glass-card p-6 rounded-2xl border border-gray-200 hover:border-blue-200 transition-all hover:scale-[1.02] text-center group"
 								>
 									<Smartphone className="w-10 h-10 text-emerald-600 mx-auto mb-3" />
-									<span className="font-display font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">
+									<span className="font-display font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
 										Android
 									</span>
 									<p className="text-xs text-muted-foreground mt-1">
@@ -405,10 +405,10 @@ export default function Test4GPage() {
 								</button>
 								<button
 									onClick={() => setPlatform("iphone")}
-									className="glass-card p-6 rounded-2xl border border-gray-200 hover:border-indigo-200 transition-all hover:scale-[1.02] text-center group"
+									className="glass-card p-6 rounded-2xl border border-gray-200 hover:border-blue-200 transition-all hover:scale-[1.02] text-center group"
 								>
 									<Smartphone className="w-10 h-10 text-blue-600 mx-auto mb-3" />
-									<span className="font-display font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">
+									<span className="font-display font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
 										iPhone
 									</span>
 									<p className="text-xs text-muted-foreground mt-1">
@@ -420,7 +420,7 @@ export default function Test4GPage() {
 							{/* Grille de référence */}
 							<div className="glass-card p-6 rounded-2xl border border-gray-200 mt-8">
 								<h3 className="text-gray-900 font-display font-semibold mb-4 flex items-center gap-2">
-									<BarChart3 className="w-5 h-5 text-indigo-600" />
+									<BarChart3 className="w-5 h-5 text-blue-600" />
 									Grille de lecture - Signal 4G / 5G
 								</h3>
 								<div className="overflow-x-auto">
@@ -485,7 +485,7 @@ export default function Test4GPage() {
 								</div>
 								<div className="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
 									<motion.div
-										className="h-full bg-indigo-500 rounded-full"
+										className="h-full bg-blue-500 rounded-full"
 										animate={{
 											width: `${((currentStep + 1) / steps.length) * 100}%`,
 										}}
@@ -517,7 +517,7 @@ export default function Test4GPage() {
 										<ol className="space-y-3">
 											{steps[currentStep].content.map((line, i) => (
 												<li key={i} className="flex gap-3 text-sm text-gray-700">
-													<span className="shrink-0 w-6 h-6 rounded-full bg-indigo-100 border border-indigo-200 flex items-center justify-center text-xs text-indigo-600 font-mono">
+													<span className="shrink-0 w-6 h-6 rounded-full bg-blue-100 border border-blue-200 flex items-center justify-center text-xs text-blue-600 font-mono">
 														{i + 1}
 													</span>
 													<span className="pt-0.5">
@@ -525,7 +525,7 @@ export default function Test4GPage() {
 															<>
 																{line.split(/(\*[#\d*]+\*?#?\*?)/).map((part, j) =>
 																	part.match(/^\*[#\d*]+\*?#?\*?$/) ? (
-																		<code key={j} className="px-2 py-0.5 rounded bg-indigo-100 border border-indigo-200 text-indigo-600 font-mono text-sm">
+																		<code key={j} className="px-2 py-0.5 rounded bg-blue-100 border border-blue-200 text-blue-600 font-mono text-sm">
 																			{part}
 																		</code>
 																	) : (
@@ -550,22 +550,22 @@ export default function Test4GPage() {
 													onClick={() => setLocation("outdoor")}
 													className={`p-4 rounded-xl border text-sm text-center transition-all ${
 														location === "outdoor"
-															? "border-indigo-500/50 bg-indigo-50 text-gray-900"
+															? "border-blue-500/50 bg-blue-50 text-gray-900"
 															: "border-gray-200 bg-gray-50 text-muted-foreground hover:bg-gray-100"
 													}`}
 												>
-													<MapPin className={`w-5 h-5 mx-auto mb-2 ${location === "outdoor" ? "text-indigo-600" : ""}`} />
+													<MapPin className={`w-5 h-5 mx-auto mb-2 ${location === "outdoor" ? "text-blue-600" : ""}`} />
 													Extérieur
 												</button>
 												<button
 													onClick={() => setLocation("indoor")}
 													className={`p-4 rounded-xl border text-sm text-center transition-all ${
 														location === "indoor"
-															? "border-indigo-500/50 bg-indigo-50 text-gray-900"
+															? "border-blue-500/50 bg-blue-50 text-gray-900"
 															: "border-gray-200 bg-gray-50 text-muted-foreground hover:bg-gray-100"
 													}`}
 												>
-													<MapPin className={`w-5 h-5 mx-auto mb-2 ${location === "indoor" ? "text-indigo-600" : ""}`} />
+													<MapPin className={`w-5 h-5 mx-auto mb-2 ${location === "indoor" ? "text-blue-600" : ""}`} />
 													Intérieur
 												</button>
 											</div>
@@ -577,7 +577,7 @@ export default function Test4GPage() {
 												>
 													{(location === "outdoor" ? steps[currentStep].exterieurContent : steps[currentStep].interieurContent)?.map((line, i) => (
 														<li key={i} className="flex gap-3 text-sm text-gray-700">
-															<span className="shrink-0 w-6 h-6 rounded-full bg-indigo-100 border border-indigo-200 flex items-center justify-center text-xs text-indigo-600 font-mono">
+															<span className="shrink-0 w-6 h-6 rounded-full bg-blue-100 border border-blue-200 flex items-center justify-center text-xs text-blue-600 font-mono">
 																{i + 1}
 															</span>
 															<span className="pt-0.5">{line}</span>
@@ -632,7 +632,7 @@ export default function Test4GPage() {
 								{currentStep < steps.length - 1 ? (
 									<button
 										onClick={() => setCurrentStep(currentStep + 1)}
-										className="flex items-center gap-1 px-4 py-2 bg-indigo-600 hover:bg-indigo-500 rounded-xl text-sm font-medium transition-all"
+										className="flex items-center gap-1 px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded-xl text-sm font-medium transition-all"
 									>
 										Suivant <ChevronRight className="w-4 h-4" />
 									</button>
@@ -640,7 +640,7 @@ export default function Test4GPage() {
 									<button
 										onClick={() => setPhase("input")}
 										disabled={steps[currentStep].isMeasurementChoice && !location}
-										className="flex items-center gap-1 px-4 py-2 bg-indigo-600 hover:bg-indigo-500 rounded-xl text-sm font-medium transition-all disabled:opacity-40 disabled:cursor-not-allowed"
+										className="flex items-center gap-1 px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded-xl text-sm font-medium transition-all disabled:opacity-40 disabled:cursor-not-allowed"
 									>
 										Saisir mes valeurs <ChevronRight className="w-4 h-4" />
 									</button>
@@ -673,7 +673,7 @@ export default function Test4GPage() {
 								{/* Référence */}
 								<div className="mb-6">
 									<label className="text-sm text-gray-900 mb-1.5 block flex items-center gap-2">
-										<Tag className="w-4 h-4 text-indigo-600" /> Référence <span className="text-muted-foreground font-normal"> - facultatif</span>
+										<Tag className="w-4 h-4 text-blue-600" /> Référence <span className="text-muted-foreground font-normal"> - facultatif</span>
 									</label>
 									<input
 										type="text"
@@ -681,7 +681,7 @@ export default function Test4GPage() {
 										onChange={(e) => setReference(e.target.value)}
 										maxLength={200}
 										placeholder="ex : Bureaux Rue de la Paix, Entrepôt Zone Nord..."
-										className="w-full bg-gray-100 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 placeholder:text-muted-foreground outline-none focus:border-indigo-200"
+										className="w-full bg-gray-100 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 placeholder:text-muted-foreground outline-none focus:border-blue-200"
 									/>
 									<p className="text-xs text-muted-foreground mt-1">Nom du site ou de la zone testée (apparaîtra dans le rapport)</p>
 								</div>
@@ -696,7 +696,7 @@ export default function Test4GPage() {
 											onClick={() => setLocation("outdoor")}
 											className={`p-3 rounded-xl border text-sm text-center transition-all ${
 												location === "outdoor"
-													? "border-indigo-500/50 bg-indigo-50 text-gray-900"
+													? "border-blue-500/50 bg-blue-50 text-gray-900"
 													: "border-gray-200 bg-gray-50 text-muted-foreground hover:bg-gray-100"
 											}`}
 										>
@@ -706,7 +706,7 @@ export default function Test4GPage() {
 											onClick={() => setLocation("indoor")}
 											className={`p-3 rounded-xl border text-sm text-center transition-all ${
 												location === "indoor"
-													? "border-indigo-500/50 bg-indigo-50 text-gray-900"
+													? "border-blue-500/50 bg-blue-50 text-gray-900"
 													: "border-gray-200 bg-gray-50 text-muted-foreground hover:bg-gray-100"
 											}`}
 										>
@@ -725,7 +725,7 @@ export default function Test4GPage() {
 										value={rsrp}
 										onChange={(e) => setRsrp(e.target.value)}
 										placeholder="ex : -85"
-										className="w-full bg-gray-100 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 placeholder:text-muted-foreground outline-none focus:border-indigo-200 font-mono"
+										className="w-full bg-gray-100 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 placeholder:text-muted-foreground outline-none focus:border-blue-200 font-mono"
 									/>
 									<p className="text-xs text-muted-foreground mt-1">Puissance du signal reçu (valeur négative, ex : −85)</p>
 								</div>
@@ -740,7 +740,7 @@ export default function Test4GPage() {
 										value={sinr}
 										onChange={(e) => setSinr(e.target.value)}
 										placeholder="ex : 15"
-										className="w-full bg-gray-100 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 placeholder:text-muted-foreground outline-none focus:border-indigo-200 font-mono"
+										className="w-full bg-gray-100 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 placeholder:text-muted-foreground outline-none focus:border-blue-200 font-mono"
 									/>
 									<p className="text-xs text-muted-foreground mt-1">Rapport signal/bruit</p>
 								</div>
@@ -755,7 +755,7 @@ export default function Test4GPage() {
 										value={rsrq}
 										onChange={(e) => setRsrq(e.target.value)}
 										placeholder="ex : -7"
-										className="w-full bg-gray-100 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 placeholder:text-muted-foreground outline-none focus:border-indigo-200 font-mono"
+										className="w-full bg-gray-100 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 placeholder:text-muted-foreground outline-none focus:border-blue-200 font-mono"
 									/>
 									<p className="text-xs text-muted-foreground mt-1">Qualité du signal reçu (si disponible)</p>
 								</div>
@@ -763,7 +763,7 @@ export default function Test4GPage() {
 								<button
 									onClick={handleEvaluate}
 									disabled={!rsrp || !sinr || !location}
-									className="w-full py-3 bg-indigo-600 hover:bg-indigo-500 rounded-xl font-display font-semibold text-sm transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+									className="w-full py-3 bg-blue-600 hover:bg-blue-500 rounded-xl font-display font-semibold text-sm transition-all disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2"
 								>
 									<BarChart3 className="w-4 h-4" />
 									Évaluer la qualité du signal
@@ -783,7 +783,7 @@ export default function Test4GPage() {
 							{/* Score global */}
 							<div className={`glass-card p-8 rounded-2xl border ${GRADES[result.overall].border} text-center`}>
 								{reference && (
-									<p className="text-sm text-indigo-600 font-mono mb-1">{reference}</p>
+									<p className="text-sm text-blue-600 font-mono mb-1">{reference}</p>
 								)}
 								<p className="text-sm text-muted-foreground uppercase tracking-wider mb-3">
 									Qualité globale - {location === "outdoor" ? "Extérieur" : "Intérieur"}
@@ -861,7 +861,7 @@ export default function Test4GPage() {
 							{/* Grille de référence avec valeurs saisies */}
 							<div className="glass-card p-6 rounded-2xl border border-gray-200">
 								<h3 className="text-gray-900 font-display font-semibold mb-4 flex items-center gap-2">
-									<BarChart3 className="w-5 h-5 text-indigo-600" />
+									<BarChart3 className="w-5 h-5 text-blue-600" />
 									Grille de référence
 								</h3>
 								<div className="overflow-x-auto">
@@ -923,7 +923,7 @@ export default function Test4GPage() {
 							{/* Envoi par email */}
 							<div className="glass-card p-6 rounded-2xl border border-gray-200">
 								<h3 className="text-gray-900 font-display font-semibold mb-3 flex items-center gap-2">
-									<Mail className="w-5 h-5 text-indigo-600" />
+									<Mail className="w-5 h-5 text-blue-600" />
 									Recevoir le rapport par email
 								</h3>
 								{sent ? (
@@ -938,12 +938,12 @@ export default function Test4GPage() {
 											value={email}
 											onChange={(e) => setEmail(e.target.value)}
 											placeholder="votre@email.com"
-											className="flex-1 bg-gray-100 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 placeholder:text-muted-foreground outline-none focus:border-indigo-200"
+											className="flex-1 bg-gray-100 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 placeholder:text-muted-foreground outline-none focus:border-blue-200"
 										/>
 										<button
 											onClick={sendReport}
 											disabled={sending || !email}
-											className="px-5 py-3 bg-indigo-600 hover:bg-indigo-500 rounded-xl font-medium text-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+											className="px-5 py-3 bg-blue-600 hover:bg-blue-500 rounded-xl font-medium text-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
 										>
 											{sending ? <Activity className="w-4 h-4 animate-spin" /> : <Mail className="w-4 h-4" />}
 											Envoyer
@@ -974,7 +974,7 @@ export default function Test4GPage() {
 								>
 									<Link
 										href="https://cyber-rgpd.com"
-										className="inline-flex items-center gap-2 px-8 py-4 bg-indigo-600 hover:bg-indigo-500 rounded-full font-display font-bold text-lg transition-all hover:scale-105 active:scale-95 shadow-lg shadow-indigo-200"
+										className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-500 rounded-full font-display font-bold text-lg transition-all hover:scale-105 active:scale-95 shadow-lg shadow-blue-200"
 									>
 										Besoin d&apos;améliorer votre couverture ?
 									</Link>

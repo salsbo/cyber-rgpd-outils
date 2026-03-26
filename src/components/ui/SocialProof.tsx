@@ -52,7 +52,7 @@ export default function SocialProof() {
               transition={{ delay: i * 0.1 }}
               className="bg-white/[0.02] border border-white/10 rounded-2xl p-6 flex flex-col"
             >
-              <Quote className="w-5 h-5 text-indigo-400/50 mb-4" />
+              <Quote className="w-5 h-5 text-blue-500/50 mb-4" />
               <p className="text-sm text-white/80 leading-relaxed mb-4 flex-1">
                 &laquo; {t.quote} &raquo;
               </p>

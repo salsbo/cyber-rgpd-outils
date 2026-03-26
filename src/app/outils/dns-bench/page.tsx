@@ -66,8 +66,8 @@ export default function BilanPerformancePage() {
 				{/* Header */}
 				<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-10">
 					<div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 border border-gray-200 mb-6">
-						<Zap className="w-4 h-4 text-indigo-600" />
-						<span className="text-sm font-mono text-indigo-600">bilan connexion</span>
+						<Zap className="w-4 h-4 text-blue-600" />
+						<span className="text-sm font-mono text-blue-600">bilan connexion</span>
 					</div>
 					<h1 className="text-3xl md:text-4xl font-display font-bold mb-3">
 						Où en est votre connexion internet ?
@@ -82,10 +82,10 @@ export default function BilanPerformancePage() {
 				{/* Toggle */}
 				<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1 }} className="flex justify-center mb-6">
 					<div className="flex items-center gap-1 p-1 bg-gray-100 border border-gray-200 rounded-full">
-						<button onClick={() => setMode("simple")} className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all ${mode === "simple" ? "bg-indigo-600 text-gray-900 shadow-lg shadow-indigo-200" : "text-muted-foreground hover:text-gray-900"}`}>
+						<button onClick={() => setMode("simple")} className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all ${mode === "simple" ? "bg-blue-600 text-gray-900 shadow-lg shadow-blue-200" : "text-muted-foreground hover:text-gray-900"}`}>
 							<User className="w-3.5 h-3.5" /> Utilisateur
 						</button>
-						<button onClick={() => setMode("expert")} className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all ${mode === "expert" ? "bg-indigo-600 text-gray-900 shadow-lg shadow-indigo-200" : "text-muted-foreground hover:text-gray-900"}`}>
+						<button onClick={() => setMode("expert")} className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all ${mode === "expert" ? "bg-blue-600 text-gray-900 shadow-lg shadow-blue-200" : "text-muted-foreground hover:text-gray-900"}`}>
 							<Code className="w-3.5 h-3.5" /> Expert
 						</button>
 					</div>
@@ -116,7 +116,7 @@ export default function BilanPerformancePage() {
 							</div>
 							{progress.detail && <p className="text-sm text-muted-foreground mb-3 ml-8">{progress.detail}</p>}
 							<div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
-								<motion.div className="h-full bg-indigo-500 rounded-full" animate={{ width: `${progress.progress}%` }} transition={{ duration: 0.3 }} />
+								<motion.div className="h-full bg-blue-500 rounded-full" animate={{ width: `${progress.progress}%` }} transition={{ duration: 0.3 }} />
 							</div>
 						</motion.div>
 					)}
@@ -207,7 +207,7 @@ export default function BilanPerformancePage() {
 							{/* Breakdown: 4 metrics as % of ideal */}
 							<div className="space-y-3">
 								<h3 className="text-gray-900 font-display font-semibold flex items-center gap-2">
-									<Monitor className="w-5 h-5 text-indigo-600" />
+									<Monitor className="w-5 h-5 text-blue-600" />
 									Le détail
 								</h3>
 
@@ -267,7 +267,7 @@ export default function BilanPerformancePage() {
 							{/* Advice */}
 							<motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="glass-card p-6 rounded-2xl border border-gray-200">
 								<div className="flex items-start gap-3">
-									<Shield className="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" />
+									<Shield className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
 									<div>
 										<p className="text-gray-900 font-display font-semibold mb-2">
 											{result.score >= 70 ? "Votre connexion est en forme" : result.score >= 40 ? "Des améliorations sont possibles" : "Votre connexion a besoin d'attention"}
@@ -288,7 +288,7 @@ export default function BilanPerformancePage() {
 							<motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }} className="text-center mt-6">
 								<p className="text-muted-foreground mb-4">Besoin d&apos;aide pour optimiser votre connexion ?</p>
 								<motion.div animate={{ opacity: [0.7, 1, 0.7] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}>
-									<Link href="https://cyber-rgpd.com" className="inline-flex items-center gap-2 px-8 py-4 bg-indigo-600 hover:bg-indigo-500 rounded-full font-display font-bold text-lg transition-all hover:scale-105 active:scale-95 shadow-lg shadow-indigo-200">
+									<Link href="https://cyber-rgpd.com" className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-500 rounded-full font-display font-bold text-lg transition-all hover:scale-105 active:scale-95 shadow-lg shadow-blue-200">
 										Contactez-nous pour un diagnostic complet &rarr;
 									</Link>
 								</motion.div>
@@ -341,7 +341,7 @@ function IdealBar({ icon, label, value, ideal, pct, detail }: {
 }
 
 function PhaseIcon({ phase }: { phase: string }) {
-	const cls = "w-5 h-5 text-indigo-600";
+	const cls = "w-5 h-5 text-blue-600";
 	switch (phase) {
 		case "detect": return <Wifi className={cls} />;
 		case "latency": return <Clock className={cls} />;

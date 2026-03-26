@@ -67,15 +67,15 @@ export default function RootLayout({
       <head>
         <meta name="theme-color" content="#FAFBFC" />
       </head>
-      <body className={`${inter.variable} ${sora.variable} ${jetbrainsMono.variable} antialiased bg-gray-50 text-gray-900 overflow-x-hidden selection:bg-indigo-100 selection:text-indigo-900 font-sans`}>
-        <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-indigo-600 focus:text-white focus:rounded-lg">
+      <body className={`${inter.variable} ${sora.variable} ${jetbrainsMono.variable} antialiased bg-gray-50 text-gray-900 overflow-x-hidden selection:bg-blue-100 selection:text-blue-900 font-sans`}>
+        <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-lg">
           Aller au contenu
         </a>
 
         {/* Minimal header */}
         <header className="sticky top-0 z-40 bg-white/80 backdrop-blur-lg border-b border-gray-200">
           <div className="max-w-5xl mx-auto px-6 py-4 text-center">
-            <a href="/outils" className="text-lg font-display font-bold text-gray-900 hover:text-indigo-600 transition-colors">
+            <a href="/outils" className="text-lg font-display font-bold text-gray-900 hover:text-blue-600 transition-colors">
               Outils Cyber RGPD
             </a>
           </div>

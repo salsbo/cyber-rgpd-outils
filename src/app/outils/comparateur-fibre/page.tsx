@@ -404,7 +404,7 @@ export default function ComparateurFibrePage() {
 					className="bg-gray-50 border border-gray-200 rounded-2xl p-6 md:p-8 mb-12"
 				>
 					<h2 className="text-lg font-display font-semibold text-gray-900 mb-4 flex items-center gap-2">
-						<Building2 className="w-5 h-5 text-indigo-600" />
+						<Building2 className="w-5 h-5 text-blue-600" />
 						FTTH, FTTO, box pro : c&apos;est quoi la différence ?
 					</h2>
 					<div className="grid md:grid-cols-3 gap-6 text-sm">
@@ -441,7 +441,7 @@ export default function ComparateurFibrePage() {
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
-					className="bg-gradient-to-br from-indigo-500/10 to-purple-500/10 border border-gray-200 rounded-2xl p-6 md:p-8 mb-12"
+					className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-gray-200 rounded-2xl p-6 md:p-8 mb-12"
 				>
 					<h2 className="text-xl font-display font-semibold text-gray-900 mb-6">
 						Notre recommandation selon votre profil
@@ -493,7 +493,7 @@ export default function ComparateurFibrePage() {
 					<p className="text-lg text-muted-foreground mb-4">Besoin d&apos;aide pour choisir ?</p>
 					<Link
 						href="https://cyber-rgpd.com"
-						className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-500 rounded-full font-semibold text-sm transition-all hover:scale-105 active:scale-95"
+						className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-500 rounded-full font-semibold text-sm transition-all hover:scale-105 active:scale-95"
 					>
 						On vous conseille gratuitement
 						<ArrowRight className="w-4 h-4" />

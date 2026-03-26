@@ -20,7 +20,6 @@ const BASE_COUNTS: Record<string, number> = {
 	"diagnostic": 0,
 	"test-4g": 0,
 	"comparateur-fibre": 0,
-	"simulation-wifi": 0,
 	"cyberarnaques": 0,
 };
 
@@ -108,17 +107,6 @@ const tools = [
 		slug: "comparateur-fibre",
 		tags: ["FTTH", "Opérateurs", "Prix", "Comparatif"],
 		privacy: "Aucune donnée collectée",
-	},
-	{
-		name: "Simulation Wi-Fi",
-		description:
-			"Simulez la couverture Wi-Fi de vos locaux. Importez un plan, placez vos bornes et visualisez la couverture.",
-		href: "https://auditwifi.dahouse.fr", // external tool
-		icon: Wifi,
-		slug: "simulation-wifi",
-		tags: ["Wi-Fi", "Couverture", "Simulation", "1er plan gratuit"],
-		privacy: "1 plan gratuit\nProjets illimités en premium",
-		external: "site",
 	},
 	{
 		name: "Cyberarnaques",
@@ -209,8 +197,8 @@ export default function OutilsPage() {
 					className="text-center mb-16"
 				>
 					<div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 border border-gray-200 mb-6">
-						<Wrench className="w-4 h-4 text-indigo-600" />
-						<span className="text-sm font-mono text-indigo-600">
+						<Wrench className="w-4 h-4 text-blue-600" />
+						<span className="text-sm font-mono text-blue-600">
 							outils santé
 						</span>
 					</div>
@@ -238,16 +226,16 @@ export default function OutilsPage() {
 									href={tool.href}
 									{...("external" in tool && tool.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
 									onClick={() => trackUsage(tool.slug)}
-									className="group glass-card p-6 rounded-2xl border border-gray-200 hover:border-indigo-200 flex flex-col gap-4 transition-all hover:scale-[1.02] block h-full"
+									className="group glass-card p-6 rounded-2xl border border-gray-200 hover:border-blue-200 flex flex-col gap-4 transition-all hover:scale-[1.02] block h-full"
 								>
 									<div className="flex items-start justify-between">
-										<div className="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-200 flex items-center justify-center">
-											<Icon className="w-6 h-6 text-indigo-600" />
+										<div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center">
+											<Icon className="w-6 h-6 text-blue-600" />
 										</div>
 										{counts !== null && <SplitFlapCounter value={counts[tool.slug] ?? 0} />}
 									</div>
 									<div>
-										<h3 className="font-display font-semibold text-lg text-gray-900 group-hover:text-indigo-600 transition-colors">
+										<h3 className="font-display font-semibold text-lg text-gray-900 group-hover:text-blue-600 transition-colors">
 											{tool.name}
 										</h3>
 										<p className="text-sm text-muted-foreground mt-1">
@@ -275,7 +263,7 @@ export default function OutilsPage() {
 										</motion.span>
 										<div className="flex items-center gap-4">
 											<ToolRating slug={tool.slug} />
-											<span className="text-sm text-indigo-600 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+											<span className="text-sm text-blue-600 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
 												{"external" in tool ? (tool.external === "site" ? "Accéder" : "App Store") : "Lancer"}
 												<ArrowRight className="w-3.5 h-3.5" />
 											</span>
@@ -303,7 +291,7 @@ export default function OutilsPage() {
 							D&apos;autres outils arrivent. Dites-nous ce dont vous
 							avez besoin.
 						</p>
-						<span className="text-sm text-indigo-600">
+						<span className="text-sm text-blue-600">
 							Bientot...
 						</span>
 					</motion.div>

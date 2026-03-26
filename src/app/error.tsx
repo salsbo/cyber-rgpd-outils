@@ -33,7 +33,7 @@ export default function Error({
 				<div className="flex flex-col sm:flex-row gap-4 justify-center">
 					<button
 						onClick={() => reset()}
-						className="px-8 py-3 bg-indigo-600 text-white rounded-full font-medium hover:bg-indigo-500 transition-all flex items-center justify-center gap-2"
+						className="px-8 py-3 bg-blue-600 text-white rounded-full font-medium hover:bg-blue-500 transition-all flex items-center justify-center gap-2"
 					>
 						<RefreshCcw className="w-4 h-4" />
 						Reessayer

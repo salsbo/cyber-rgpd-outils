@@ -35,7 +35,7 @@ export default function AppShowcase() {
   return (
     <section className="py-24 px-6 relative overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/5 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
@@ -46,7 +46,7 @@ export default function AppShowcase() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-xs font-mono uppercase tracking-widest text-indigo-400 mb-4 block">
+          <span className="text-xs font-mono uppercase tracking-widest text-blue-500 mb-4 block">
             App Store
           </span>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
@@ -85,7 +85,7 @@ export default function AppShowcase() {
                 {/* App Info */}
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 mb-1">
-                    <h3 className="text-lg font-semibold text-white group-hover:text-indigo-300 transition-colors">
+                    <h3 className="text-lg font-semibold text-white group-hover:text-blue-500 transition-colors">
                       {app.name}
                     </h3>
                     <ExternalLink className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -95,7 +95,7 @@ export default function AppShowcase() {
                     <span className="text-xs px-2 py-0.5 rounded-full bg-white/10 text-muted-foreground">
                       {app.category}
                     </span>
-                    <span className="text-xs text-indigo-400 font-medium">
+                    <span className="text-xs text-blue-500 font-medium">
                       {app.price}
                     </span>
                   </div>

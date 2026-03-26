@@ -19,8 +19,8 @@ export default function SentinelPromo() {
   return (
     <section className="py-16 md:py-24 px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="relative rounded-2xl md:rounded-3xl bg-gradient-to-br from-red-500/5 via-indigo-500/10 to-purple-500/5 border border-white/10 overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-500/10 via-transparent to-transparent" />
+        <div className="relative rounded-2xl md:rounded-3xl bg-gradient-to-br from-red-500/5 via-blue-500/10 to-purple-500/5 border border-white/10 overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-500/10 via-transparent to-transparent" />
 
           <div className="relative grid lg:grid-cols-2 gap-6 md:gap-8 p-6 md:p-10 items-center">
             {/* Text Content */}
@@ -83,7 +83,7 @@ export default function SentinelPromo() {
             >
               <div className="relative scale-90 md:scale-100">
                 {/* Phone Frame */}
-                <div className="relative w-[180px] md:w-[200px] h-[380px] md:h-[420px] bg-gradient-to-b from-gray-800 to-gray-900 rounded-[35px] md:rounded-[40px] p-2 shadow-2xl shadow-indigo-500/30 border border-white/10">
+                <div className="relative w-[180px] md:w-[200px] h-[380px] md:h-[420px] bg-gradient-to-b from-gray-800 to-gray-900 rounded-[35px] md:rounded-[40px] p-2 shadow-2xl shadow-blue-500/30 border border-white/10">
                   <div className="w-full h-full bg-[#0B0F14] rounded-[30px] md:rounded-[34px] overflow-hidden relative">
                     {/* Notch */}
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 md:w-20 h-4 md:h-5 bg-black rounded-b-lg md:rounded-b-xl z-10" />
@@ -148,7 +148,7 @@ export default function SentinelPromo() {
 
                       {/* Bottom Nav */}
                       <div className="absolute bottom-4 md:bottom-5 left-2 md:left-2.5 right-2 md:right-2.5 bg-white/5 rounded-lg md:rounded-xl p-1.5 flex justify-around border border-white/5">
-                        <LayoutDashboard className="w-3 h-3 text-indigo-400" />
+                        <LayoutDashboard className="w-3 h-3 text-blue-500" />
                         <Network className="w-3 h-3 text-white/40" />
                         <Bell className="w-3 h-3 text-white/40" />
                         <Activity className="w-3 h-3 text-white/40" />

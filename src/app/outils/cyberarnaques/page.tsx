@@ -41,21 +41,21 @@ const STEPS: Step[] = [
 	// Phase "Introduction"
 	{
 		phase: "Introduction",
-		phaseColor: "text-indigo-600",
+		phaseColor: "text-blue-600",
 		icon: UserX,
 		title: "Ça n\u2019arrive pas qu\u2019aux autres",
 		text: "Les arnaques en ligne ne ciblent pas les gens crédules. Elles exploitent des mécanismes psychologiques universels. Personne n\u2019est immunisé. Ce qui fait la différence, ce n\u2019est pas l\u2019intelligence : c\u2019est le contexte. Fatigue, stress, émotion, routine. C\u2019est là que les arnaqueurs frappent.",
 	},
 	{
 		phase: "Introduction",
-		phaseColor: "text-indigo-600",
+		phaseColor: "text-blue-600",
 		icon: Brain,
 		title: "Votre cerveau est la cible",
 		text: "Les cyberarnaques s\u2019appuient sur des biais psychologiques bien documentés : l\u2019autorité (un faux conseiller bancaire), l\u2019urgence (un compte bloqué), la réciprocité (un faux remboursement), l\u2019engagement (une série de petites actions anodines qui mènent à la grande). Comprendre ces ressorts, c\u2019est déjà s\u2019en protéger.",
 	},
 	{
 		phase: "Introduction",
-		phaseColor: "text-indigo-600",
+		phaseColor: "text-blue-600",
 		icon: DatabaseZap,
 		title: "Vos données sont déjà dans la nature",
 		text: "Des fuites de données massives (opérateurs, réseaux sociaux, e-commerce) ont mis en circulation des millions de noms, emails, numéros de téléphone et mots de passe. Les arnaqueurs croisent ces informations pour construire des scenarii crédibles et personnalisés. C\u2019est ce qu\u2019on appelle l\u2019ingénierie sociale.",
@@ -189,7 +189,7 @@ function IntroScreen({ onStart }: { onStart: () => void }) {
 			<div>
 				<button
 					onClick={onStart}
-					className="px-8 py-3.5 bg-indigo-600 hover:bg-indigo-500 rounded-xl font-semibold transition-all hover:scale-105 active:scale-95"
+					className="px-8 py-3.5 bg-blue-600 hover:bg-blue-500 rounded-xl font-semibold transition-all hover:scale-105 active:scale-95"
 				>
 					Commencer
 				</button>
@@ -237,7 +237,7 @@ function StepScreen({
 				</div>
 				<div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
 					<motion.div
-						className="h-full bg-indigo-500 rounded-full"
+						className="h-full bg-blue-500 rounded-full"
 						initial={{ width: 0 }}
 						animate={{ width: `${progress}%` }}
 						transition={{ duration: 0.4, ease: "easeOut" }}
@@ -276,7 +276,7 @@ function StepScreen({
 			<div className="flex justify-end">
 				<button
 					onClick={onNext}
-					className="px-8 py-3.5 bg-indigo-600 hover:bg-indigo-500 rounded-xl font-semibold transition-all hover:scale-105 active:scale-95"
+					className="px-8 py-3.5 bg-blue-600 hover:bg-blue-500 rounded-xl font-semibold transition-all hover:scale-105 active:scale-95"
 				>
 					J&apos;ai compris
 				</button>
@@ -332,14 +332,14 @@ function FinalScreen() {
 						className="glass-card rounded-xl border border-gray-200 bg-gray-50 p-5 flex items-center justify-between gap-4 hover:bg-gray-100 transition-colors group"
 					>
 						<div>
-							<p className="font-display font-semibold text-gray-900 group-hover:text-indigo-600 transition-colors">
+							<p className="font-display font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
 								{r.label}
 							</p>
 							<p className="text-sm text-muted-foreground">
 								{r.description}
 							</p>
 						</div>
-						<ExternalLink className="w-4 h-4 text-muted-foreground shrink-0 group-hover:text-indigo-600 transition-colors" />
+						<ExternalLink className="w-4 h-4 text-muted-foreground shrink-0 group-hover:text-blue-600 transition-colors" />
 					</a>
 				))}
 			</div>
@@ -348,7 +348,7 @@ function FinalScreen() {
 			<div>
 				<Link
 					href="/outils"
-					className="inline-flex items-center gap-2 px-8 py-3.5 bg-indigo-600 hover:bg-indigo-500 rounded-xl font-semibold transition-all hover:scale-105 active:scale-95"
+					className="inline-flex items-center gap-2 px-8 py-3.5 bg-blue-600 hover:bg-blue-500 rounded-xl font-semibold transition-all hover:scale-105 active:scale-95"
 				>
 					<ArrowLeft className="w-4 h-4" />
 					Retour aux outils

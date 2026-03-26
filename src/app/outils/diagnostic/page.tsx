@@ -138,8 +138,8 @@ export default function DiagnosticPage() {
 				{/* Header */}
 				<motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-10">
 					<div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 border border-gray-200 mb-6">
-						<ClipboardCheck className="w-4 h-4 text-indigo-600" />
-						<span className="text-sm font-mono text-indigo-600">diagnostic IT</span>
+						<ClipboardCheck className="w-4 h-4 text-blue-600" />
+						<span className="text-sm font-mono text-blue-600">diagnostic IT</span>
 					</div>
 					<h1 className="text-3xl md:text-4xl font-display font-bold mb-3">
 						Votre informatique est-elle bien gérée ?
@@ -163,7 +163,7 @@ export default function DiagnosticPage() {
 					{phase === "speed" && (
 						<motion.div key="speed" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="glass-card p-8 rounded-2xl border border-gray-200 text-center">
 							<motion.div animate={{ rotate: 360 }} transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}>
-								<Activity className="w-10 h-10 text-indigo-600 mx-auto" />
+								<Activity className="w-10 h-10 text-blue-600 mx-auto" />
 							</motion.div>
 							<p className="text-gray-900 font-display font-semibold mt-4">Test de débit en cours...</p>
 							<p className="text-sm text-muted-foreground mt-2">Détection de votre type de connexion.</p>
@@ -182,7 +182,7 @@ export default function DiagnosticPage() {
 									<span className="text-xs text-muted-foreground">{progressPct}%</span>
 								</div>
 								<div className="w-full h-1.5 bg-gray-100 rounded-full overflow-hidden">
-									<motion.div className="h-full bg-indigo-500 rounded-full" animate={{ width: `${progressPct}%` }} />
+									<motion.div className="h-full bg-blue-500 rounded-full" animate={{ width: `${progressPct}%` }} />
 								</div>
 							</div>
 
@@ -206,10 +206,10 @@ export default function DiagnosticPage() {
 											className={`w-full text-left p-4 rounded-xl border transition-all text-sm flex items-center gap-3 group ${
 												choice.value === "dunno"
 													? "border-gray-100 bg-white hover:bg-gray-100 text-muted-foreground hover:text-gray-900"
-													: "border-gray-200 bg-gray-50 hover:bg-gray-100 hover:border-indigo-200 text-gray-900"
+													: "border-gray-200 bg-gray-50 hover:bg-gray-100 hover:border-blue-200 text-gray-900"
 											}`}
 										>
-											<div className="w-5 h-5 rounded-full border-2 border-gray-200 group-hover:border-indigo-400 transition-colors shrink-0" />
+											<div className="w-5 h-5 rounded-full border-2 border-gray-200 group-hover:border-blue-500 transition-colors shrink-0" />
 											{choice.label}
 										</button>
 									))}
@@ -340,7 +340,7 @@ export default function DiagnosticPage() {
 							{/* Send report by email */}
 							<div className="glass-card p-6 rounded-2xl border border-gray-200">
 								<h3 className="text-gray-900 font-display font-semibold mb-3 flex items-center gap-2">
-									<Mail className="w-5 h-5 text-indigo-600" />
+									<Mail className="w-5 h-5 text-blue-600" />
 									Recevoir le rapport par email
 								</h3>
 								{sent ? (
@@ -355,12 +355,12 @@ export default function DiagnosticPage() {
 											value={email}
 											onChange={(e) => setEmail(e.target.value)}
 											placeholder="votre@email.com"
-											className="flex-1 bg-gray-100 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 placeholder:text-muted-foreground outline-none focus:border-indigo-200"
+											className="flex-1 bg-gray-100 border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-900 placeholder:text-muted-foreground outline-none focus:border-blue-200"
 										/>
 										<button
 											onClick={sendReport}
 											disabled={sending || !email}
-											className="px-5 py-3 bg-indigo-600 hover:bg-indigo-500 rounded-xl font-medium text-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+											className="px-5 py-3 bg-blue-600 hover:bg-blue-500 rounded-xl font-medium text-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
 										>
 											{sending ? <Activity className="w-4 h-4 animate-spin" /> : <Mail className="w-4 h-4" />}
 											Envoyer
@@ -381,7 +381,7 @@ export default function DiagnosticPage() {
 								<div className="text-center">
 									<p className="text-muted-foreground mb-4">Vous souhaitez approfondir ce diagnostic ?</p>
 									<motion.div animate={{ opacity: [0.7, 1, 0.7] }} transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}>
-										<Link href="https://cyber-rgpd.com" className="inline-flex items-center gap-2 px-8 py-4 bg-indigo-600 hover:bg-indigo-500 rounded-full font-display font-bold text-lg transition-all hover:scale-105 active:scale-95 shadow-lg shadow-indigo-200">
+										<Link href="https://cyber-rgpd.com" className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-500 rounded-full font-display font-bold text-lg transition-all hover:scale-105 active:scale-95 shadow-lg shadow-blue-200">
 											Demander un audit IT sur mesure &rarr;
 										</Link>
 									</motion.div>
