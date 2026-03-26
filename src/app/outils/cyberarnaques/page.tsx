@@ -296,11 +296,6 @@ function FinalScreen() {
 			label: "cybermalveillance.gouv.fr",
 			description: "Assistance et diagnostic en ligne",
 		},
-		{
-			href: "tel:0805805817",
-			label: "0 805 805 817",
-			description: "Info Escroqueries (appel gratuit)",
-		},
 	];
 
 	return (

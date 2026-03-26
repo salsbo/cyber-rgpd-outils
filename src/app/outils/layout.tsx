@@ -1,11 +1,11 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: "Outils gratuits pour PME - Audit, Mesure, Diagnostic",
+	title: "Outils gratuits pour professionnels de la santé - Audit, Mesure, Diagnostic",
 	description:
-		"Outils gratuits pour auditer et ameliorer votre infrastructure : audit email, test visio, scan de securite, eligibilite fibre/4G, diagnostic IT 360. Aucune inscription.",
+		"Outils gratuits pour les professionnels de la santé : audit email, test visio, scan de sécurité, éligibilité fibre/4G, diagnostic IT 360. Aucune inscription.",
 	keywords: [
-		"outils gratuits PME",
+		"outils gratuits santé",
 		"audit email",
 		"test visio",
 		"scan ports",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 		"securite informatique",
 	],
 	openGraph: {
-		title: "Outils gratuits pour PME - Outils Cyber RGPD",
+		title: "Outils gratuits pour professionnels de la santé - Cyber RGPD",
 		description:
 			"Des outils simples et concrets pour auditer, mesurer et ameliorer votre infrastructure. Aucune inscription requise.",
 		url: "https://outils.cyber-rgpd.com/outils",

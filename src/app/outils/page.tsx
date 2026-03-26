@@ -18,7 +18,6 @@ const BASE_COUNTS: Record<string, number> = {
 	"dns-bench": 0,
 	"eligibilite": 0,
 	"diagnostic": 0,
-	"easynetpulse": 0,
 	"test-4g": 0,
 	"comparateur-fibre": 0,
 	"simulation-wifi": 0,
@@ -89,17 +88,6 @@ const tools = [
 		slug: "diagnostic",
 		tags: ["Sécurité", "Sauvegarde", "Support", "Score"],
 		privacy: "Aucune donnée collectée",
-	},
-	{
-		name: "EasyNetPulse",
-		description:
-			"Votre iPhone est-il connecté à Internet ? Une sonde simple qui vérifie la connectivité sans consommer de data inutilement.",
-		href: "https://apps.apple.com/fr/app/easynetpulse/id6754982118",
-		icon: Smartphone,
-		slug: "easynetpulse",
-		tags: ["iPhone", "Connectivité", "Sonde", "App Store"],
-		privacy: "Aucune donnée collectée",
-		external: true,
 	},
 	{
 		name: "Test réception 4G / 5G",
@@ -223,12 +211,12 @@ export default function OutilsPage() {
 					<div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100 border border-gray-200 mb-6">
 						<Wrench className="w-4 h-4 text-indigo-600" />
 						<span className="text-sm font-mono text-indigo-600">
-							outils PME
+							outils santé
 						</span>
 					</div>
 					<h1 className="text-4xl md:text-5xl font-display font-bold mb-4">
-						Outils gratuits pour{" "}
-						<span className="gradient-text">PME</span>
+						Des outils gratuits pour les{" "}
+						<span className="gradient-text">professionnels de la santé</span>
 					</h1>
 					<p className="text-lg text-muted-foreground max-w-2xl mx-auto">
 						Des outils simples et concrets pour auditer, mesurer et
